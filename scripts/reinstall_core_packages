@@ -1,0 +1,27 @@
+#!/bin/bash
+#Get current directory of this file
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#vim
+sudo apt-get install vim
+#git
+sudo apt-get install git
+#zsh
+sudo apt-get install zsh
+#run install script for chruby. See reinstall/install_chruby
+$DIR/install_chruby
+#run install script for ruby-install. See reinstall/install_ruby-install
+$DIR/install_ruby-install
+#install common ruby version
+ruby-install ruby 2.2.0
+#Ruby on Rails
+gem install rails
+#some development headers used with rails and other gems
+sudo apt-get install libpq-dev
+#NodeJS
+sudo apt-get install nodejs
+#postgresql
+sudo apt-get install postgresql
+#heroku for rails deployment
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+#vundle to manage vim plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

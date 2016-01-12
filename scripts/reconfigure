@@ -1,0 +1,26 @@
+#!/bin/bash
+#configure zsh as main shell
+chsh -s /bin/zsh
+#Get current directory of this file
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+#######INSTALL PHASE########
+#install prezto zsh framework
+$DIR/install_prezto
+#cmake (used for compiling a vim plugin)
+sudo apt-get install build-essential cmake
+#python development headers (used for compiling a vim plugin)
+sudo apt-get install python-dev
+
+#######CONFIGURATION PHASE########
+\cp -f ~/reinstall/config/. ~
+#> .zshrc
+#> .gitconfig
+#> .vimrc
+#install plugins listed in .vimrc
+vim +PluginInstall +qall
+#compile YouCompleteMe plugin
+cd ~/.vim/bundle/YouCompleteMe
+./install.py
+#set prompt
+$DIR/set_prompt

@@ -1,0 +1,25 @@
+[user]
+  email = luke@freerunningtechnologies.com
+  name = Luke Jones
+
+[push]
+  default = matching
+
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = vim
+
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local --date=relative
+
+[branch]
+  autosetuprebase = always
+
+[rebase]
+  autosquash = true
+
+[push]
+  default = simple
+
+[color]
+  ui = true

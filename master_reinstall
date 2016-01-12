@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#######THIS FILE WILL RUN ALL REINSTALL SCRIPTS IN THE CORRECT ORDER TO SETUP YOUR SYSTEM#######
+#
+#NOTES:
+#This has only been tested on xubuntu 14.04. However this should work without fail on Ubuntu 14.04
+#aswell. This hasn't been run in it's entirety and therefore is not 100% guarenteed to work. For
+#this reason it is well documented so you might find the errors and fix them. Feel free to
+#contribute on github.
+#
+#WARNING:
+#This script assumes you have a fresh install of xubuntu or ubuntu on your system with no prior
+#installs. Honestly the worst that might happen is something like installing a program twice
+#if you already have it installed, but other than that you can probably run this whenever.
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+$DIR/scripts/reinstall_core_packages
+$DIR/scripts/reconfigure
+echo 'be sure to set up any roles for postgresql you may need for existing rails apps'
+echo 'remember to run "heroku login"'

@@ -1,0 +1,4 @@
+#!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+sudo dpkg --get-selections | grep '[[:space:]]install$' | \awk '{print $1}' > $DIR/package_list_current
+grep -F -x -v -f $DIR/package_list_current /home/gjh33/package_list > $DIR/to_install

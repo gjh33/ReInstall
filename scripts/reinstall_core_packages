@@ -1,18 +1,16 @@
 #!/bin/bash
 #Get current directory of this file
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#curl
+#sudo apt-get install curl
 #vim
 sudo apt-get install vim
 #git
 sudo apt-get install git
 #zsh
 sudo apt-get install zsh
-#run install script for chruby. See reinstall/install_chruby
-$DIR/install_chruby
-#run install script for ruby-install. See reinstall/install_ruby-install
-$DIR/install_ruby-install
-#install common ruby version
-ruby-install ruby 2.2.0
+#run install script for rvm
+$DIR/install_rvm
 #Ruby on Rails
 gem install rails
 #some development headers used with rails and other gems

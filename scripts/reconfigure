@@ -13,7 +13,7 @@ sudo apt-get install build-essential cmake
 sudo apt-get install python-dev
 
 #######CONFIGURATION PHASE########
-\cp -f ~/reinstall/config/. ~
+\cp -Rf ~/ReInstall/config/. ~
 #> .zshrc
 #> .gitconfig
 #> .vimrc
@@ -23,4 +23,5 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py
 #set prompt
+zsh
 $DIR/set_prompt
